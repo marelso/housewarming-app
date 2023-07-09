@@ -16,11 +16,11 @@ class PinterestRemoteDataSource(private val service: PinterestService) {
         else throw RuntimeException("Error getting pin info for id: $userId. ${result.message()}")
     }
 
-    suspend fun getPin(pinId: String): List<PinInfo> {
+    suspend fun getPin(pinId: String): PinInfo? {
         val result = service.getPins(pinId)
 
         if (result.isSuccessful) {
-            return (result.body() as PinInfoResponse).data
+            return (result.body() as PinInfoResponse).data.firstOrNull()
         }
         else throw RuntimeException("Error getting pin info for id: $pinId. ${result.message()}")
     }
