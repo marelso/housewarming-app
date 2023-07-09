@@ -1,6 +1,7 @@
 package com.tah.housewarming.data
 
 import com.tah.housewarming.ui.dashboard.PinInfoResponse
+import com.tah.housewarming.ui.dashboard.UserPinsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -12,6 +13,6 @@ interface PinterestService {
     suspend fun getPins(@Query("pin_ids") pinIds: String): Response<PinInfoResponse>
 
     @GET("v3/pidgets/users/{userId}/pins/")
-    suspend fun getUserPins(@Path("userId") userId: String): Response<PinInfoResponse>
+    suspend fun getUserPins(@Path("userId") userId: String): Response<UserPinsResponse>
 
 }
