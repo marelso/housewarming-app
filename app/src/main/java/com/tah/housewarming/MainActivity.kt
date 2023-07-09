@@ -3,6 +3,7 @@ package com.tah.housewarming
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.tah.housewarming.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
