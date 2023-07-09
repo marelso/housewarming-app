@@ -1,5 +1,7 @@
 package com.tah.housewarming.di
 
+import com.tah.housewarming.data.PinterestRemoteDataSource
+import com.tah.housewarming.data.PinterestRepository
 import com.tah.housewarming.data.PinterestService
 import com.tah.housewarming.ui.dashboard.DashboardViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -24,5 +26,8 @@ private fun provideApi(url: String): Retrofit {
 val module = module {
     single(named(PINTEREST_API)) { provideApi(PINTEREST_API_URL) }
     factory { get<Retrofit>(named(PINTEREST_API)).create(PinterestService::class.java) }
+    factory { PinterestRemoteDataSource(get()) }
+    factory { PinterestRepository(get()) }
+
     viewModel { DashboardViewModel(get()) }
 }
