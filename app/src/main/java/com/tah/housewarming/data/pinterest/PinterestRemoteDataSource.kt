@@ -1,4 +1,4 @@
-package com.tah.housewarming.data
+package com.tah.housewarming.data.pinterest
 
 import com.tah.housewarming.ui.dashboard.Pin
 import com.tah.housewarming.ui.dashboard.PinInfo

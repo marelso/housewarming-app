@@ -1,8 +1,8 @@
 package com.tah.housewarming.di
 
-import com.tah.housewarming.data.PinterestRemoteDataSource
-import com.tah.housewarming.data.PinterestRepository
-import com.tah.housewarming.data.PinterestService
+import com.tah.housewarming.data.pinterest.PinterestRemoteDataSource
+import com.tah.housewarming.data.pinterest.PinterestRepository
+import com.tah.housewarming.data.pinterest.PinterestService
 import com.tah.housewarming.ui.dashboard.DashboardViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named

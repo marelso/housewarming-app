@@ -2,7 +2,7 @@ package com.tah.housewarming.ui.dashboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tah.housewarming.data.PinterestRepository
+import com.tah.housewarming.data.pinterest.PinterestRepository
 import kotlinx.coroutines.launch
 
 class DashboardViewModel(private val repository: PinterestRepository) : ViewModel() {
