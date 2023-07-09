@@ -1,17 +1,27 @@
 package com.tah.housewarming.data
 
+import com.tah.housewarming.ui.dashboard.Pin
+import com.tah.housewarming.ui.dashboard.PinInfo
 import com.tah.housewarming.ui.dashboard.PinInfoResponse
+import com.tah.housewarming.ui.dashboard.UserPinsResponse
+import java.lang.RuntimeException
 
 class PinterestRemoteDataSource(private val service: PinterestService) {
-    suspend fun getUserPins(userId: String) {
-        var result = service.getUserPins(userId)
+    suspend fun getUserPins(userId: String): List<Pin> {
+        val result = service.getUserPins(userId)
 
         if (result.isSuccessful) {
-            val userPins = (result.body() as PinInfoResponse).data
+            return (result.body() as UserPinsResponse).data.pins
         }
+        else throw RuntimeException("Error getting pin info for id: $userId. ${result.message()}")
     }
 
-    suspend fun getPin(pinId: String) {
-        service.getPins(pinId)
+    suspend fun getPin(pinId: String): List<PinInfo> {
+        val result = service.getPins(pinId)
+
+        if (result.isSuccessful) {
+            return (result.body() as PinInfoResponse).data
+        }
+        else throw RuntimeException("Error getting pin info for id: $pinId. ${result.message()}")
     }
 }

@@ -20,18 +20,14 @@ data class User(
 
 data class Pin(
     val dominant_color: String,
-    val embed: Any?,
     val link: String,
     val images: PinImages,
     val domain: String,
     val repin_count: Int,
     val pinner: User,
-    val story_pin_data: Any?,
     val id: String,
     val description: String,
-    val attribution: Any?,
     val is_video: Boolean,
-    val native_creator: Any?,
     val aggregated_pin_data: AggregatedPinData,
     val board: Board
 )

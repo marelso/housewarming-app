@@ -10,20 +10,15 @@ data class PinInfoResponse(
 
 data class PinInfo(
     val link: String,
-    val embed: Any?,
-    val videos: Any?,
     val board: Board,
     val is_video: Boolean,
-    val attribution: Any?,
     val dominant_color: String,
     val repin_count: Int,
     val aggregated_pin_data: AggregatedPinData,
     val images: Images,
     val rich_metadata: RichMetadata,
-    val native_creator: Any?,
     val pinner: Pinner,
     val id: String,
-    val story_pin_data: Any?,
     val description: String,
     val domain: String
 )
@@ -66,7 +61,6 @@ data class RichMetadata(
     val canonical_url: String?,
     val description: String,
     val favicon_link: String,
-    val tracker: Any?,
     val id: String,
     val title: String,
     val has_price_drop: Boolean,
@@ -84,7 +78,6 @@ data class Article(
     val date_published: String?,
     val name: String,
     val type: String,
-    val authors: List<Any>,
     val id: String,
     val description: String
 )
