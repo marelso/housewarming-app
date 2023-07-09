@@ -1,4 +1,4 @@
-package com.tah.housewarming.dashboard
+package com.tah.housewarming.ui.dashboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

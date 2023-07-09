@@ -1,4 +1,4 @@
-package com.tah.housewarming
+package com.tah.housewarming.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
