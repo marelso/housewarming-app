@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboard">
+
+    <fragment
+        android:id="@+id/dashboard"
+        android:name="com.tah.housewarming.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/action_DashboardFragment_to_CategoryFragment"
+            app:destination="@id/category" />
+
+        <action
+            android:id="@+id/action_DashboardFragment_to_ProductFragment"
+            app:destination="@id/product" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/category"
+        android:name="com.tah.housewarming.category.CategoryFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_category">
+
+        <action
+            android:id="@+id/action_CategoryFragment_to_DashboardFragment"
+            app:destination="@id/dashboard" />
+
+        <action
+            android:id="@+id/action_CategoryFragment_to_ProductFragment"
+            app:destination="@id/product" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/product"
+        android:name="com.tah.housewarming.product.ProductFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_product">
+
+        <action
+            android:id="@+id/action_ProductFragment_to_DashboardFragment"
+            app:destination="@id/dashboard" />
+
+        <action
+            android:id="@+id/action_ProductFragment_to_CategoryFragment"
+            app:destination="@id/category" />
+    </fragment>
+
+</navigation>
