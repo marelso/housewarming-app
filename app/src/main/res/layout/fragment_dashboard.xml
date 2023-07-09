@@ -3,12 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/keyLine_4"
     tools:context=".dashboard.DashboardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/keyLine_4"
+            android:text="@string/house_warming_party"
+            android:textAppearance="?textAppearanceHeadline1"
+            android:textSize="@dimen/textSize_8"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="@dimen/keyLine_12"
+            android:layout_height="@dimen/keyLine_1"
+            android:background="?colorPrimary"
+            android:backgroundTint="?colorPrimary" />
+
+    </LinearLayout>
 
 </FrameLayout>
