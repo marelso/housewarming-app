@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tah.housewarming.data.Status
+import com.tah.housewarming.data.pinterest.Pin
 import com.tah.housewarming.data.pinterest.PinterestRepository
 import kotlinx.coroutines.launch
 

@@ -1,9 +1,5 @@
 package com.tah.housewarming.data.pinterest
 
-import com.tah.housewarming.ui.dashboard.Pin
-import com.tah.housewarming.ui.dashboard.PinInfo
-import com.tah.housewarming.ui.dashboard.PinInfoResponse
-import com.tah.housewarming.ui.dashboard.UserPinsResponse
 import java.lang.RuntimeException
 
 class PinterestRemoteDataSource(private val service: PinterestService) {

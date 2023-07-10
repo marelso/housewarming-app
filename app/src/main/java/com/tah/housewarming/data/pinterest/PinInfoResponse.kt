@@ -1,4 +1,4 @@
-package com.tah.housewarming.ui.dashboard
+package com.tah.housewarming.data.pinterest
 
 data class PinInfoResponse(
     val status: String,

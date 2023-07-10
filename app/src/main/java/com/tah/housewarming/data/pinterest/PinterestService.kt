@@ -1,7 +1,5 @@
 package com.tah.housewarming.data.pinterest
 
-import com.tah.housewarming.ui.dashboard.PinInfoResponse
-import com.tah.housewarming.ui.dashboard.UserPinsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
