@@ -5,8 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.tah.housewarming.R
+import com.tah.housewarming.data.Status
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.tah.housewarming.databinding.FragmentDashboardBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +24,9 @@ class DashboardFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private val dashboardViewModel: DashboardViewModel by viewModel()
+    private var binding: FragmentDashboardBinding? = null
+
+    private val viewModel: DashboardViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,14 +40,25 @@ class DashboardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
-
-        return view
+        binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setupBindings()
+
+    }
+
+    private fun setupBindings() {
+        viewModel.userPinsUIState.observe(viewLifecycleOwner) {
+            when(it.status) {
+                Status.RUNNING -> binding?.title?.visibility = View.GONE
+                Status.SUCCESS -> binding?.title?.visibility = View.VISIBLE
+                else -> binding?.title?.visibility = View.GONE
+            }
+        }
     }
 
     companion object {

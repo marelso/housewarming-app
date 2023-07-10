@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/keyLine_4"
     tools:context=".ui.dashboard.DashboardFragment">
 
     <LinearLayout
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/keyLine_4"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,6 +28,13 @@
             android:background="?colorPrimary"
             android:backgroundTint="?colorPrimary" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/keyLine_4"
+            android:text="@string/subtitle_dashboard"
+            android:textAppearance="?textAppearanceBody1" />
+
     </LinearLayout>
 
-</FrameLayout>
+</ScrollView>
