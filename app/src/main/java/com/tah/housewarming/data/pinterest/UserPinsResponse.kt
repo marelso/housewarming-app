@@ -1,5 +1,7 @@
 package com.tah.housewarming.data.pinterest
 
+import com.google.gson.annotations.SerializedName
+
 data class UserPinsResponse(
     val status: String,
     val code: Int,
@@ -33,8 +35,8 @@ data class Pin(
 )
 
 data class PinImages(
-    val `237x`: Image,
-    val `564x`: Image
+    @SerializedName("237x") val image237x: ImageSize,
+    @SerializedName("564x") val image564x: ImageSize
 )
 
 data class Image(
