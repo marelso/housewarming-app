@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.tah.housewarming.data.Status
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.tah.housewarming.databinding.FragmentDashboardBinding
@@ -47,15 +51,30 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupBindings()
+        setupViews()
+    }
 
+    private fun setupViews() {
+        binding?.userPins?.let {
+            it.layoutManager = GridLayoutManager(requireContext(), SPAIN_COUNT, RecyclerView.HORIZONTAL, false)
+            PagerSnapHelper().attachToRecyclerView(it)
+        }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        setupBindings()
     }
 
     private fun setupBindings() {
         viewModel.userPinsUIState.observe(viewLifecycleOwner) {
             when(it.status) {
                 Status.RUNNING -> binding?.title?.visibility = View.GONE
-                Status.SUCCESS -> binding?.title?.visibility = View.VISIBLE
+                Status.SUCCESS -> {
+                    binding?.title?.visibility = View.VISIBLE
+
+                    binding?.userPins?.adapter = it.pins?.let { pins -> UserPinsAdapter(pins) }
+                }
                 else -> binding?.title?.visibility = View.GONE
             }
         }
@@ -71,6 +90,9 @@ class DashboardFragment : Fragment() {
          * @return A new instance of fragment DashboardFragment.
          */
         // TODO: Rename and change types and number of parameters
+
+        private const val SPAIN_COUNT = 2
+
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             DashboardFragment().apply {
