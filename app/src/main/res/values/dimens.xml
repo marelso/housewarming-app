@@ -14,6 +14,7 @@
     <dimen name="keyLine_11">64dp</dimen>
     <dimen name="keyLine_12">72dp</dimen>
     <dimen name="keyLine_13">144dp</dimen>
+    <dimen name="keyLine_14">256dp</dimen>
 
     <dimen name="textSize_0">2sp</dimen>
     <dimen name="textSize_1">4sp</dimen>
