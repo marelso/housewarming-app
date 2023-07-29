@@ -11,9 +11,6 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val HOUSEWARMING = "HOUSEWARMING"
-private const val PINTEREST = "PINTEREST"
-
 private fun provideApi(url: String): Retrofit {
     return Retrofit.Builder()
         .baseUrl(url)
@@ -21,9 +18,9 @@ private fun provideApi(url: String): Retrofit {
         .build()
 }
 
-val module = module {
-    single(named(PINTEREST)) { provideApi(Constants.API.PINTEREST) }
-    factory { get<Retrofit>(named(PINTEREST)).create(PinterestService::class.java) }
+val pinterest = module {
+    single(named(Constants.Strings.PINTEREST)) { provideApi(Constants.API.PINTEREST) }
+    factory { get<Retrofit>(named(Constants.Strings.PINTEREST)).create(PinterestService::class.java) }
     factory { PinterestRemoteDataSource(get()) }
     factory { PinterestRepository(get()) }
 
