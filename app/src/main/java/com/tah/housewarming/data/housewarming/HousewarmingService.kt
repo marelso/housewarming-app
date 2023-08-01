@@ -10,5 +10,5 @@ interface HousewarmingService {
     suspend fun getCategories(): Response<List<Category>>
 
     @GET("v1/categories/{id}")
-    suspend fun getCategory(@Path("id") category: Int)
+    suspend fun getCategory(@Path("id") category: Int): Response<Category>
 }
