@@ -4,20 +4,20 @@
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/keyLine_1" />
             <solid android:color="@color/white"/>
-            <stroke android:color="@color/stroke" android:width="@dimen/keyLine_0"/>
+            <stroke android:color="?colorAccent" android:width="@dimen/keyLine_0"/>
         </shape>
     </item>
     <item android:state_focused="true">
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/keyLine_1" />
-            <stroke android:color="?colorPrimary" android:width="@dimen/keyLine_0"/>
+            <stroke android:color="?colorAccent" android:width="@dimen/keyLine_0"/>
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/keyLine_2" />
             <solid android:color="?colorSurface"/>
-            <stroke android:color="@color/stroke" android:width="@dimen/keyLine_0"/>
+            <stroke android:color="?colorAccent" android:width="@dimen/keyLine_0"/>
         </shape>
     </item>
 </selector>
